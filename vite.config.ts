@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Restaurant_pos_billing_Crm-system-/',
   plugins: [
     react(),
     tailwindcss(),
