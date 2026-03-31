@@ -64,14 +64,14 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
               <div className="w-9 h-9 sm:w-10 sm:h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-lg sm:text-xl shrink-0">M</div>
               <span className="text-sm sm:text-lg font-press-start text-violet-600 truncate">Exora POS</span>
             </Link>
-            <div className="hidden md:flex items-center gap-4 lg:gap-6">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-6">
               <Link to="/public/menu" className="nav-link">Menu</Link>
               <Link to="/pos" className="btn-primary py-1.5 px-4 text-sm">Staff Login</Link>
               <button type="button" onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-charcoal" aria-label="Toggle theme">
                 {state.theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
               </button>
             </div>
-            <div className="flex md:hidden items-center gap-1">
+            <div className="flex lg:hidden items-center gap-1">
               <button type="button" onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-charcoal" aria-label="Toggle theme">
                 {state.theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
               </button>
@@ -87,7 +87,7 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
             </div>
           </div>
           {publicMenuOpen && (
-            <div className="md:hidden border-t border-gray-200 dark:border-white/10 bg-background/95 px-4 py-3 flex flex-col gap-3 shadow-lg">
+            <div className="lg:hidden border-t border-gray-200 dark:border-white/10 bg-background/95 px-4 py-3 flex flex-col gap-3 shadow-lg">
               <Link to="/public/menu" className="nav-link py-2 text-base" onClick={() => setPublicMenuOpen(false)}>
                 Menu
               </Link>
