@@ -12,7 +12,7 @@ export const PublicMenu = () => {
   
   // Load cart count from localStorage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem('mo22_cart');
+    const savedCart = localStorage.getItem('exora_cart');
     if (savedCart) {
       try {
         const parsed = JSON.parse(savedCart);
@@ -28,7 +28,7 @@ export const PublicMenu = () => {
   // Listen for storage changes to update cart count
   useEffect(() => {
     const handleStorageChange = () => {
-      const savedCart = localStorage.getItem('mo22_cart');
+      const savedCart = localStorage.getItem('exora_cart');
       if (savedCart) {
         try {
           const cart = JSON.parse(savedCart);
@@ -66,7 +66,7 @@ export const PublicMenu = () => {
         copy.push({ ...item, quantity: 1 });
       }
       try {
-        localStorage.setItem('mo22_cart', JSON.stringify(copy));
+        localStorage.setItem('exora_cart', JSON.stringify(copy));
       } catch (err) {
         console.error('Failed to save cart', err);
       }
@@ -228,7 +228,7 @@ export const PublicMenu = () => {
               <span>₹{cart.reduce((s, i) => s + (i.price * (i.quantity || 1)), 0)}</span>
             </div>
             <div className="flex gap-2">
-              <button onClick={() => { localStorage.removeItem('mo22_cart'); setCart([]); setCartCount(0); }} className="btn-secondary flex-1">Clear</button>
+              <button onClick={() => { localStorage.removeItem('exora_cart'); setCart([]); setCartCount(0); }} className="btn-secondary flex-1">Clear</button>
               <button onClick={() => { setCartOpen(false); window.location.href = '/pos'; }} className="btn-primary flex-1">Checkout</button>
             </div>
           </div>

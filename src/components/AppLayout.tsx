@@ -47,7 +47,7 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
           <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             <Link to="/public" className="flex items-center gap-2">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">M</div>
-              <span className="text-xl font-syne font-bold">Mo 22</span>
+              <span className="text-xl font-syne font-bold">Exora POS</span>
             </Link>
             <div className="flex items-center gap-6">
               <Link to="/public/menu" className="nav-link">Menu</Link>
@@ -72,7 +72,7 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
         <div className="p-6 flex items-center justify-between">
           <Link to="/" className={`flex items-center gap-2 ${!isSidebarOpen && 'hidden'}`}>
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">M</div>
-            <span className="text-xl font-syne font-bold uppercase tracking-tight text-charcoal dark:text-cream">Mo 22</span>
+            <span className="text-xl font-syne font-bold uppercase tracking-tight text-charcoal dark:text-cream">Exora POS</span>
           </Link>
           <button onClick={() => setSidebarOpen(!isSidebarOpen)} className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-charcoal transition-all text-charcoal dark:text-cream">
             {isSidebarOpen ? <X size={20} /> : <MenuIcon size={20} />}
@@ -101,7 +101,7 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
       {/* Main Content */}
       <main className="flex-1 overflow-auto h-screen">
         <header className="h-16 border-b border-gray-200 dark:border-white/10 bg-white dark:bg-charcoal-light backdrop-blur-md px-8 flex items-center justify-between sticky top-0 z-40">
-          <h2 className="text-lg font-bold text-charcoal dark:text-cream">Mo 22 Management</h2>
+          <h2 className="text-lg font-bold text-charcoal dark:text-cream">Exora POS Management</h2>
           <div className="flex items-center gap-4">
             <div className="flex flex-col items-end">
               <span className="text-sm font-bold text-charcoal dark:text-cream">Admin</span>

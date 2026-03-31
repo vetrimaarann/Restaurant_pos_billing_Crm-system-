@@ -52,12 +52,12 @@ const INITIAL_STATE: AppState = {
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, setState] = useState<AppState>(() => {
-    const saved = localStorage.getItem('mo22_state');
+    const saved = localStorage.getItem('exora_state');
     return saved ? JSON.parse(saved) : INITIAL_STATE;
   });
 
   useEffect(() => {
-    localStorage.setItem('mo22_state', JSON.stringify(state));
+    localStorage.setItem('exora_state', JSON.stringify(state));
     // Apply theme to document
     if (state.theme === 'dark') {
       document.documentElement.classList.add('dark');

@@ -60,7 +60,7 @@ export const Dashboard = () => {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
           <h1 className="text-4xl font-syne font-extrabold uppercase tracking-tight">Executive <span className="text-primary italic">Dashboard</span></h1>
-          <p className="text-charcoal/80 font-medium">Real-time performance analytics for Mo 22</p>
+          <p className="text-charcoal/80 font-medium">Real-time performance analytics for Exora</p>
         </div>
         <div className="flex gap-2">
           <button className="btn-secondary py-2 px-4 text-xs font-bold uppercase tracking-widest">Last 7 Days</button>

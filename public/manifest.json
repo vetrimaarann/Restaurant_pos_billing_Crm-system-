@@ -1,11 +1,11 @@
 {
-  "name": "Mo 22 Restaurant Management System",
-  "short_name": "Mo 22",
+  "name": "Exora POS for Catering",
+  "short_name": "Exora POS",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFF8F0",
   "theme_color": "#D85A30",
-  "description": "Premium South Indian Restaurant Management System for Mo 22 Highway Dhaba.",
+  "description": "Premium Management System for Exora Catering.",
   "icons": [
     {
       "src": "/vite.svg",

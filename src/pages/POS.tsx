@@ -7,7 +7,7 @@ import { useReactToPrint } from 'react-to-print';
 const BillTemplate = React.forwardRef(({ order, tableId }: any, ref: any) => (
   <div ref={ref} className="p-8 bg-white text-black font-mono text-sm max-w-[300px] border border-gray-100 shadow-sm rounded-xl">
     <div className="text-center space-y-2 mb-6">
-      <h2 className="text-2xl font-syne font-extrabold uppercase">Mo 22</h2>
+      <h2 className="text-2xl font-syne font-extrabold uppercase">Exora POS</h2>
       <p className="text-xs font-medium">NH Tirupati Main Road, Mulbagal</p>
       <div className="w-full border-b border-black border-dashed my-2" />
       <div className="flex justify-between text-[10px] uppercase font-bold text-gray-500">
@@ -68,8 +68,8 @@ export const POS = () => {
 
   // Load cart from localStorage on component mount
   useEffect(() => {
-    const savedCart = localStorage.getItem('mo22_cart');
-    const savedTable = localStorage.getItem('mo22_selected_table');
+    const savedCart = localStorage.getItem('exora_cart');
+    const savedTable = localStorage.getItem('exora_selected_table');
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
@@ -84,13 +84,13 @@ export const POS = () => {
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem('mo22_cart', JSON.stringify(cart));
+    localStorage.setItem('exora_cart', JSON.stringify(cart));
   }, [cart]);
 
   // Save selected table to localStorage
   useEffect(() => {
     if (selectedTable) {
-      localStorage.setItem('mo22_selected_table', selectedTable);
+      localStorage.setItem('exora_selected_table', selectedTable);
     }
   }, [selectedTable]);
 
@@ -121,15 +121,15 @@ export const POS = () => {
     if (!selectedTable) return;
     addOrder(selectedTable, cart);
     setCart([]);
-    localStorage.removeItem('mo22_cart');
+    localStorage.removeItem('exora_cart');
     setView('MAP');
     setSelectedTable(null);
-    localStorage.removeItem('mo22_selected_table');
+    localStorage.removeItem('exora_selected_table');
   };
 
   const handleClearCart = () => {
     setCart([]);
-    localStorage.removeItem('mo22_cart');
+    localStorage.removeItem('exora_cart');
   };
 
   return (
