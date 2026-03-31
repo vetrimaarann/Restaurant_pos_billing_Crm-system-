@@ -7,7 +7,7 @@ import { useReactToPrint } from 'react-to-print';
 const BillTemplate = React.forwardRef(({ order, tableId }: any, ref: any) => (
   <div ref={ref} className="p-8 bg-white text-black font-mono text-sm max-w-[300px] border border-gray-100 shadow-sm rounded-xl">
     <div className="text-center space-y-2 mb-6">
-      <h2 className="text-2xl font-syne font-extrabold uppercase">Exora POS</h2>
+      <h2 className="text-xl font-press-start text-violet-600 uppercase">Exora POS</h2>
       <p className="text-xs font-medium">NH Tirupati Main Road, Mulbagal</p>
       <div className="w-full border-b border-black border-dashed my-2" />
       <div className="flex justify-between text-[10px] uppercase font-bold text-gray-500">

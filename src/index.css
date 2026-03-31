@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 @import "tailwindcss";
 
@@ -68,6 +69,12 @@
   .font-syne {
     font-family: var(--font-heading);
     font-weight: 700;
+  }
+
+  .font-press-start {
+    font-family: 'Press Start 2P', cursive;
+    text-transform: none; /* Reset if overridden */
+    letter-spacing: normal;
   }
 
   .font-inter {
