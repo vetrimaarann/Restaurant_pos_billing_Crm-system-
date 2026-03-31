@@ -133,23 +133,23 @@ export const POS = () => {
   };
 
   return (
-    <div className="space-y-8 animate-fade-in px-4">
-      <div className="flex items-center justify-between">
-        <div className="space-y-1">
-          <h1 className="text-4xl font-syne font-extrabold uppercase tracking-tight text-charcoal">POS <span className="text-primary italic">& Billing</span></h1>
-          <p className="text-charcoal/80 font-medium">Manage tables, orders, and real-time billing</p>
+    <div className="space-y-6 sm:space-y-8 animate-fade-in px-0 sm:px-0">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="space-y-1 min-w-0">
+          <h1 className="text-2xl sm:text-4xl font-syne font-extrabold uppercase tracking-tight text-charcoal">POS <span className="text-primary italic">& Billing</span></h1>
+          <p className="text-sm sm:text-base text-charcoal/80 font-medium">Manage tables, orders, and real-time billing</p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-2 sm:gap-3">
           <button 
             onClick={() => setView('MAP')} 
-            className={`px-6 py-2.5 rounded-xl font-bold transition-all flex items-center gap-2 ${view === 'MAP' ? 'bg-primary text-white shadow-lg' : 'bg-white dark:bg-charcoal text-charcoal/80 hover:bg-gray-50'}`}
+            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-sm sm:text-base font-bold transition-all flex items-center gap-2 ${view === 'MAP' ? 'bg-primary text-white shadow-lg' : 'bg-white dark:bg-charcoal text-charcoal/80 hover:bg-gray-50'}`}
           >
             <Utensils size={18} /> Floor Map
           </button>
           <button 
             disabled={!selectedTable}
             onClick={() => setView('ORDER')} 
-            className={`px-6 py-2.5 rounded-xl font-bold transition-all flex items-center gap-2 ${view === 'ORDER' ? 'bg-primary text-white shadow-lg' : 'bg-white dark:bg-charcoal text-charcoal/80 hover:bg-gray-50 disabled:opacity-50'}`}
+            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-sm sm:text-base font-bold transition-all flex items-center gap-2 ${view === 'ORDER' ? 'bg-primary text-white shadow-lg' : 'bg-white dark:bg-charcoal text-charcoal/80 hover:bg-gray-50 disabled:opacity-50'}`}
           >
             <Plus size={18} /> New Order
           </button>
@@ -281,8 +281,8 @@ export const POS = () => {
 
       {/* Bill Action Modal/Section */}
       {selectedTable && activeOrder && view === 'MAP' && (
-        <div className="fixed inset-0 z-50 bg-charcoal/20 backdrop-blur-sm flex items-center justify-end p-8">
-          <div className="w-full max-w-lg bg-white h-full rounded-3xl shadow-2xl overflow-hidden flex flex-col animate-slide-up">
+        <div className="fixed inset-0 z-50 bg-charcoal/20 backdrop-blur-sm flex items-stretch sm:items-center justify-end p-0 sm:p-4 md:p-8">
+          <div className="w-full max-w-lg bg-white min-h-0 h-full sm:h-[min(100%,48rem)] sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col animate-slide-up">
             <div className="p-8 border-b border-gray-100">
               <div className="flex items-center justify-between">
                 <div>

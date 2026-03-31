@@ -194,7 +194,7 @@ export const PublicMenu = () => {
           <div onClick={() => setCartOpen(false)} className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
         </div>
       )}
-      <div aria-hidden={!isCartOpen} className={`fixed top-0 right-0 h-full w-96 transform transition-transform duration-300 z-50 ${isCartOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div aria-hidden={!isCartOpen} className={`fixed top-0 right-0 h-full w-full max-w-[100vw] sm:w-96 sm:max-w-md transform transition-transform duration-300 z-50 ${isCartOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="h-full bg-white dark:bg-charcoal shadow-xl flex flex-col text-charcoal dark:text-cream">
           <div className="p-4 border-b border-gray-100 dark:border-white/10 flex items-center justify-between">
             <h3 className="text-lg font-bold text-charcoal dark:text-cream">Your Cart <span className="text-sm font-medium text-gray-500 dark:text-gray-300">({cartCount})</span></h3>

@@ -28,7 +28,7 @@
   }
 
   html, body, #root {
-    @apply w-full h-full;
+    @apply w-full min-h-full;
   }
 
   body {
@@ -53,15 +53,21 @@
   }
 
   h1 {
-    @apply text-4xl;
+    @apply text-3xl sm:text-4xl;
   }
 
   h2 {
-    @apply text-3xl;
+    @apply text-2xl sm:text-3xl;
   }
 
   h3 {
-    @apply text-2xl;
+    @apply text-xl sm:text-2xl;
+  }
+
+  @media (max-width: 639px) {
+    h1 {
+      font-size: clamp(1.5rem, 5vw + 0.5rem, 2.25rem);
+    }
   }
 }
 
@@ -338,13 +344,17 @@ div[class*="dark:bg-"] {
   color: #FAF3E0;
 }
 
-/* Responsive adjustments: phone and tablet */
-/* Phone: max-width 639px */
+/*
+ * Responsive breakpoints (align with Tailwind defaults):
+ * sm: 640px | md: 768px | lg: 1024px | xl: 1280px | 2xl: 1536px
+ */
+
+/* Phone portrait / small: max 639px */
 @media (max-width: 639px) {
   .input-field {
     padding: 0.5rem 0.75rem;
-    font-size: 0.95rem;
-    height: 44px;
+    font-size: 16px; /* avoids iOS zoom on focus */
+    min-height: 44px;
   }
 
   .flex.overflow-x-auto {
@@ -353,7 +363,6 @@ div[class*="dark:bg-"] {
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Category buttons: reduce padding and font-size for small screens */
   .px-8.py-3.rounded-2xl {
     padding: 0.5rem 1rem !important;
     font-size: 0.95rem !important;
@@ -361,36 +370,28 @@ div[class*="dark:bg-"] {
     min-width: 88px;
   }
 
-  /* Make grid single column for tiny screens */
-  .grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
   .glass-card {
     padding: 1rem !important;
-  }
-
-  /* Cart drawer full width on phones */
-  .w-96 {
-    width: 100% !important;
   }
 
   .btn-primary {
     padding: 0.5rem 1rem !important;
     font-size: 0.95rem !important;
   }
+
+  /* Safe area for notched phones */
+  body {
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: env(safe-area-inset-right, 0);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
 }
 
-/* Tablet: 640px - 1023px */
+/* Tablet: 640px – 1023px */
 @media (min-width: 640px) and (max-width: 1023px) {
   .px-8.py-3.rounded-2xl {
     padding: 0.75rem 1.5rem !important;
     font-size: 1rem !important;
-  }
-
-  .w-96 {
-    width: 22rem !important;
   }
 
   .glass-card {
@@ -401,8 +402,21 @@ div[class*="dark:bg-"] {
     padding: 0.75rem 1rem;
     font-size: 1rem;
   }
+}
 
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+/* Large desktop: optional breathing room */
+@media (min-width: 1280px) {
+  .max-w-7xl {
+    padding-left: max(1rem, env(safe-area-inset-left, 0));
+    padding-right: max(1rem, env(safe-area-inset-right, 0));
+  }
+}
+
+/* Touch devices: slightly larger tap targets for nav-style controls */
+@media (hover: none) and (pointer: coarse) {
+  .nav-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 }
